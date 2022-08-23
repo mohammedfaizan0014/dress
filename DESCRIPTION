@@ -1,9 +1,23 @@
 Package: dress
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R package for Disclosure Risk Empirical Safety Score
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Authors@R: 
+    person(given = "Mohammed",
+           family = "Faizan",
+           role = c("aut", "cre"),
+           email = "mfai0014@student.monash.edu",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Mohammed",
+           family = "Faizan",
+           role = c("aut", "cre"),
+           email = "mfai0014@student.monash.edu",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Mohammed",
+           family = "Faizan",
+           role = c("aut", "cre"),
+           email = "mfai0014@student.monash.edu",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
