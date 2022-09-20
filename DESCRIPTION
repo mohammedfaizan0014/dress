@@ -5,23 +5,29 @@ Version: 0.1.0
 Authors@R: 
     person(given = "Mohammed",
            family = "Faizan",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "mfai0014@student.monash.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-    person(given = "Mohammed",
-           family = "Faizan",
-           role = c("aut", "cre"),
-           email = "mfai0014@student.monash.edu",
+    person(given = "Pauline",
+           family = "O'Shaughnessy",
+           role = c("aut"),
+           email = "poshaugh@uow.edu.au",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-    person(given = "Mohammed",
-           family = "Faizan",
+    person(given = "Bradley",
+           family = "Wakefield",
            role = c("aut", "cre"),
-           email = "mfai0014@student.monash.edu",
+           email = "bradleyw@uow.edu.au",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: AGPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/mohammedfaizan0014/dress
 BugReports: https://github.com/mohammedfaizan0014/dress/issues
+RoxygenNote: 7.2.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)

@@ -1,3 +1,9 @@
+#'
+#'
+#'
+#'
+#' @export
+
 update <-
   function(DRisk,...){
     par_flag <- rep(T,6)
