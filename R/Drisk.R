@@ -1,3 +1,17 @@
+#' @title Disclosure Risk
+#'
+#' @description
+#' \code{drscore} Disclosure Risk
+#'
+#'
+#'
+#'
+#' @param direction a numeric value to set the direction of the color scale  if direction is < 0 switch the direction
+#' @param ... other arguments to \code{\link[ggplot2]{discrete_scale}}
+#'
+#' @details Default colors are generated with branded palette. A categorical variable is discrete in the sense that it has clear boundaries from one ategory to another. On the other hand, a continuous scale does not have such clear separation. Hence, different colors can be used for different categories and one color with different gradient across the scale can be used for continuous variable.
+#' @seealso  \code{\link[ggplot2]{discrete_scale}}
+#'
 #'
 #'
 #'

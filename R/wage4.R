@@ -19,6 +19,7 @@
 #' @source \url{'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv'}
 #'
 #'
+#'
 #' @examples
 #' head(wage4)
 "wage4"
