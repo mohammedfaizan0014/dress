@@ -3,16 +3,23 @@
 #'
 #' @description
 #' \code{update} Update
+#' @importFrom svMisc progress
+#' @usage
+#' update(DRisk, ...)
+#'
+#' @param DRisk results from drscore. Drisk object.
+#' @param ... other arguments to \code{\link[dress]{drscore}}
+#' @seealso  \code{\link[ggplot2]{discrete_scale}}
 #'
 #'
-#'
-#'
-#' @param direction a numeric value to set the direction of the color scale  if direction is < 0 switch the direction
-#' @param ... other arguments to \code{\link[ggplot2]{discrete_scale}}
-#'
-#' @details Default colors are generated with branded palette. A categorical variable is discrete in the sense that it has clear boundaries from one ategory to another. On the other hand, a continuous scale does not have such clear separation. Hence, different colors can be used for different categories and one color with different gradient across the scale can be used for continuous variable.
-#' @seealso \code{\link[ggplot2]{discrete_scale}}
-#'
+#' @examples
+#' ########################
+#' ## mixed dataset
+#' ########################
+#' library(svMisc)
+#' library(dress)
+#' nn <- drscore(Sample = wage4, Protected = wage4_protected, numeric.vars = c("age","wage"))
+#' #xd <- update(nn,delta = 0.06)
 #'
 #'
 #'
@@ -143,7 +150,7 @@ update <-
     LinkScore_Levels <- array(dim = c(length(catLevels),6))
     count <- 0
     probcount <- 0
-    require(svMisc)
+    #require(svMisc)
 
     for(i in 1:length(catLevels)){
       Sample_Levels[[i]] <- as.matrix(Sample[which(catID == catLevels[i]),numvar])

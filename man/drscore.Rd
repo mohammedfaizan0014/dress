@@ -4,28 +4,58 @@
 \alias{drscore}
 \title{Disclosure Risk}
 \usage{
-drscore(
-  Sample,
-  Protected,
-  delta = 0.05,
-  neighbourhood = 1,
-  kdistinct = 5,
-  ldeniable = kdistinct,
-  neigh_type = "constant",
-  numeric.vars = NULL,
-  outlier.par = list(centre = median, scale = var, thresh = 0.01)
-)
+drscore(Sample,Protected,
+delta = 0.05,
+neighbourhood = 1,
+kdistinct = 5,
+ldeniable = kdistinct,
+neigh_type = "constant",
+numeric.vars = NULL,
+outlier.par = list(centre = median,
+                   scale = var,
+                   thresh = 0.01))
 }
 \arguments{
-\item{direction}{a numeric value to set the direction of the color scale  if direction is < 0 switch the direction}
+\item{Sample}{A sample of the original dataset. A data frame or data frame extension (e.g. a tibble).}
 
-\item{...}{other arguments to \code{\link[ggplot2]{discrete_scale}}}
+\item{Protected}{A sample of the protected dataset. A data frame or data frame extension (e.g. a tibble).}
+
+\item{delta}{amount of difference}
+
+\item{neighbourhood}{Possible 'neighbourhood' types
+1 = Mahalanobis (Based on Mahalanobis Distance)
+2 = DSTAR   (Based on Density Based Distance)
+3 = StdEuclid (Based on Standardised (by std dev) Euclidean Distance)
+4 = RelEuclid (Relative Euclidean Distance sum_k ((Xk-Yk)/Xk)^2)}
+
+\item{kdistinct}{number of data point in the neighbourhood to be classified as protected. k distinct threshold if integer then probability threshold is k/SS (SS = sample size)}
+
+\item{ldeniable}{methods of define disclosure. l undeniable threshold if integer then probability threshold is l/SS (SS = sample size)}
+
+\item{neigh_type}{methods of define length/area of neighbourhood. Possible 'neigh_type' types
+constant = fixed threshold on distance
+prob = Nearest Neighbour Probability Neighbourhood used (Worst Case Scenario 1)
+estprob = Nearest Neighbour Probability Neighbourhood used based on protected density (Worst Case Scenario 2)}
+
+\item{numeric.vars}{#Continuous Variables in the dataset.}
+
+\item{outlier.par}{A list(centre, scale, thresh). Define the method of determining outlier. Parameters to adjust how MV outliers are determined. Default is that lie 99 percent (based on Chi-Square n-1 dist) away from median after scale by variance.}
 }
 \description{
 \code{drscore} Disclosure Risk
 }
 \details{
-Default colors are generated with branded palette. A categorical variable is discrete in the sense that it has clear boundaries from one ategory to another. On the other hand, a continuous scale does not have such clear separation. Hence, different colors can be used for different categories and one color with different gradient across the scale can be used for continuous variable.
+Statistical disclosure control methods for micro-level continuous data are both varied and complex. This method can be applied to any pair of original and protected data-sets despite a difference in dimensionality and without assuming any particular joint probabil- ity structure between the original and protected data.
+}
+\examples{
+########################
+## mixed dataset
+########################
+library(svMisc)
+library(dress)
+drscore(Sample = wage4, Protected = wage4_protected, numeric.vars = c("age","wage"))
+
+
 }
 \seealso{
 \code{\link[ggplot2]{discrete_scale}}

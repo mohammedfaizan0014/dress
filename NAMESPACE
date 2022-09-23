@@ -2,3 +2,10 @@
 
 export(drscore)
 export(update)
+importFrom(stats,mahalanobis)
+importFrom(stats,median)
+importFrom(stats,qchisq)
+importFrom(stats,quantile)
+importFrom(stats,var)
+importFrom(svMisc,progress)
+importFrom(utils,head)
