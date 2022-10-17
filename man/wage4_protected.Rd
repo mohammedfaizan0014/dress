@@ -3,33 +3,34 @@
 \docType{data}
 \name{wage4_protected}
 \alias{wage4_protected}
-\title{wage4_protected
-`r class(wage4_protected)`}
+\title{wage4_protected}
 \format{
-A data frame with `r nrow(wage4_protected)` rows and `r ncol(wage4_protected)` variables:
+A data frame with 3000 observations and 3 variables:
 \describe{
-  \item{age}{country}
-  \item{education}{3 letter country code}
-  \item{jobclass}{year from 1961 to 2018}
-  \item{wage}{produce of crop in tonnes per hectare}
+  \item{age}{Age of worker}
+  \item{education}{A factor with levels 1. < HS Grad 2. HS Grad 3. Some College 4. College Grad and 5. Advanced Degree indicating education level}
+  \item{jobclass}{A factor with levels 1. Industrial and 2. Information indicating type of job}
+  \item{wage}{Workers raw wage}
   ...
 }
 }
 \source{
-\url{'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv'}
+Data was manually assembled by Steve Miller, of Inquidia Consulting (formerly Open BI). From the March 2011 Supplement to Current Population Survey data.
+\url{'https://www.re3data.org/repository/r3d100011860'}
 }
 \usage{
 wage4_protected
 }
 \description{
-More details about the data
+Wage and other data protected with some disclosure control method for original the Mid-Atlantic region wage data.
 }
-\section{Data Contents}{
-
-The data was collected from... during...
-}
-
 \examples{
 head(wage4_protected)
+}
+\references{
+James, G., Witten, D., Hastie, T., and Tibshirani, R. (2013) An Introduction to Statistical Learning with applications in R, https://www.statlearning.com, Springer-Verlag, New York
+}
+\seealso{
+\code{\link[ISLR]{Wage}} \code{\link[dress]{wage4}}
 }
 \keyword{datasets}

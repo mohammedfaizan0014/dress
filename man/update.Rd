@@ -11,23 +11,58 @@ update(DRisk, ...)
 
 \item{...}{other arguments to \code{\link[dress]{drscore}}}
 }
+\value{
+An object of the type as `DRisk`. Summary of the disclosure risk in terms of distinctness, similarities and undeniable parameters.
+}
 \description{
 \code{update} Update
+Update the results from drscore for continuous data only.
 }
 \examples{
-########################
-## mixed dataset
-########################
+
+# ##################
+# ##all continuous###################
+
 library(svMisc)
 library(dress)
-nn <- drscore(Sample = wage4, Protected = wage4_protected, numeric.vars = c("age","wage"))
-#xd <- update(nn,delta = 0.06)
+library(sdcMicro)
+
+CASC_sample <- CASCrefmicrodata[,c(2,3,4,6)]
+CASC_protected <- addNoise(CASC_sample,noise = 100)$xm #Additive Noise protected
+
+DRisk_NN <- drscore(
+  Sample = CASC_sample, #Original Sample
+  Protected = CASC_protected,
+  delta = 0.05,
+  kdistinct = 0.05, #k distinct threshold if integer then
+  # probability threshold is k/SS (SS = sample size)
+  ldeniable = 5, # l undeniable threshold if integer then
+  # probability threshold is l/SS (SS = sample size)
+  neighbourhood = 1,
+  #Possible 'neighbourhood' types
+  # 1 = Mahalanobis (Based on Mahalanobis Distance)
+  # 2 = DSTAR   (Based on Density Based Distance)
+  # 3 = StdEuclid (Based on Standardised (by std dev) Euclidean Distance)
+  # 4 = RelEuclid (Relative Euclidean Distance sum_k ((Xk-Yk)/Xk)^2)
+  neigh_type = 'prob',
+  #Possible 'neigh_type' types
+  #constant = fixed threshold on distance
+  #prob = Nearest Neighbour Probability Neighbourhood used
+  #estprob = = Nearest Neighbour Probability Neighbourhood used based on protected density
+  numeric.vars = 1:4, #Which Variables are continuous?
+  outlier.par = list(centre = median,
+                     scale = var,
+                     thresh = 0.01)
+  #Parameters to adjust how MV outliers are determined.
+  #Default is that lie 99\% (based on Chi-Square n-1 dist) away from median after scale by variance.
+)
+
+#Update neighbourhood to fixed threshold definition
+DRisk_Fxd <- update(DRisk_NN,neigh_type = 'constant',
+                    delta = 1)
 
 
 
 
 
-}
-\seealso{
-\code{\link[ggplot2]{discrete_scale}}
 }

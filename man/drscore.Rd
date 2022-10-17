@@ -16,9 +16,9 @@ outlier.par = list(centre = median,
                    thresh = 0.01))
 }
 \arguments{
-\item{Sample}{A sample of the original dataset. A data frame or data frame extension (e.g. a tibble).}
+\item{Sample}{A sample of the original dataset. A data frame or data frame extension (e.g. a tibble), matrix or an array,}
 
-\item{Protected}{A sample of the protected dataset. A data frame or data frame extension (e.g. a tibble).}
+\item{Protected}{A sample of the protected dataset. A data frame or data frame extension (e.g. a tibble), matrix or an array.}
 
 \item{delta}{amount of difference}
 
@@ -41,11 +41,14 @@ estprob = Nearest Neighbour Probability Neighbourhood used based on protected de
 
 \item{outlier.par}{A list(centre, scale, thresh). Define the method of determining outlier. Parameters to adjust how MV outliers are determined. Default is that lie 99 percent (based on Chi-Square n-1 dist) away from median after scale by variance.}
 }
+\value{
+An object of the type as `DRisk`. Summary of the disclosure risk in terms of distinctness, similarities and undeniable parameters.
+}
 \description{
 \code{drscore} Disclosure Risk
 }
 \details{
-Statistical disclosure control methods for micro-level continuous data are both varied and complex. This method can be applied to any pair of original and protected data-sets despite a difference in dimensionality and without assuming any particular joint probabil- ity structure between the original and protected data.
+Statistical disclosure control methods for micro-level continuous data are both varied and complex. This method can be applied to any pair of original and protected data-sets despite a difference in dimensionality and without assuming any particular joint probability structure between the original and protected data.
 }
 \examples{
 ########################
@@ -58,5 +61,5 @@ drscore(Sample = wage4, Protected = wage4_protected, numeric.vars = c("age","wag
 
 }
 \seealso{
-\code{\link[ggplot2]{discrete_scale}}
+\code{\link[dress]{update}}
 }

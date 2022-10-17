@@ -19,10 +19,10 @@
 #'                    scale = var,
 #'                    thresh = 0.01))
 #'
-#' @details  Statistical disclosure control methods for micro-level continuous data are both varied and complex. This method can be applied to any pair of original and protected data-sets despite a difference in dimensionality and without assuming any particular joint probabil- ity structure between the original and protected data.
+#' @details  Statistical disclosure control methods for micro-level continuous data are both varied and complex. This method can be applied to any pair of original and protected data-sets despite a difference in dimensionality and without assuming any particular joint probability structure between the original and protected data.
 #'
-#' @param Sample A sample of the original dataset. A data frame or data frame extension (e.g. a tibble).
-#' @param Protected A sample of the protected dataset. A data frame or data frame extension (e.g. a tibble).
+#' @param Sample A sample of the original dataset. A data frame or data frame extension (e.g. a tibble), matrix or an array,
+#' @param Protected A sample of the protected dataset. A data frame or data frame extension (e.g. a tibble), matrix or an array.
 #' @param delta amount of difference
 #' @param neighbourhood Possible 'neighbourhood' types
 #' 1 = Mahalanobis (Based on Mahalanobis Distance)
@@ -38,9 +38,10 @@
 #' @param numeric.vars #Continuous Variables in the dataset.
 #' @param outlier.par A list(centre, scale, thresh). Define the method of determining outlier. Parameters to adjust how MV outliers are determined. Default is that lie 99 percent (based on Chi-Square n-1 dist) away from median after scale by variance.
 #'
-#' @seealso  \code{\link[ggplot2]{discrete_scale}}
+#' @seealso  \code{\link[dress]{update}}
 #'
-#'
+#' @returns
+#' An object of the type as `DRisk`. Summary of the disclosure risk in terms of distinctness, similarities and undeniable parameters.
 #' @examples
 #' ########################
 #' ## mixed dataset
@@ -68,6 +69,14 @@ drscore <-
                        scale = var,
                        thresh = 0.01)
   ){
+    #testing parameter classes
+    assertthat::assert_that(is.data.frame(Sample))
+    assertthat::assert_that(is.data.frame(Protected)|is.matrix(Protected)|is.array(Protected))
+    assertthat::assert_that(assertthat::noNA(Sample), assertthat::noNA(Protected))
+    assertthat::assert_that(neighbourhood %in% c(1:4),
+                            msg = "Only 4 neighbourhood present. Only 1,2,3 or 4 options allowed for neighbourhood")
+    assertthat::assert_that(neigh_type %in% c("constant","prob","estprob"),
+                            msg = "Only 3 neighbourhood types present,constant, prob, estprob.")
 
     if(is.character(numeric.vars)){
       numeric.vars <-  which(colnames(Sample) %in% numeric.vars)
@@ -267,6 +276,7 @@ drscore <-
 
     linkscore <- data.frame(Values = c(mean(discflag),sum(discflag*outs)/sum(outs),
                                        mean(Cond1),mean(Cond2),mean(Cond3)))
+    #cond1 dist, cond2 estimted, cond3 undeniable
 
     rownames(linkscore) = c("Delta Disclosure Risk of Sample",
                             "Delta Disclosure Risk of Sample Outliers",
@@ -320,8 +330,9 @@ drscore <-
                    Linkcounts = linkcounts,
                    Linkscore = linkscore,
                    LinkScore_Levels=LinkScore_Levels)
+    class(output) <- 'DRisk' #solved this class error
     return(output)
-    class(output) <- 'DRisk'
+
   }
 
 

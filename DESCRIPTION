@@ -3,23 +3,22 @@ Type: Package
 Title: R package for Disclosure Risk Empirical Safety Score
 Version: 0.1.0
 Authors@R: 
-    person(given = "Mohammed",
+    c(person(given = "Mohammed",
            family = "Faizan",
            role = c("aut"),
-           email = "mfai0014@student.monash.edu",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "mfai0014@student.monash.edu"
+           ),
     person(given = "Pauline",
            family = "O'Shaughnessy",
            role = c("aut"),
-           email = "poshaugh@uow.edu.au",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "poshaugh@uow.edu.au"
+           ),
     person(given = "Bradley",
            family = "Wakefield",
            role = c("aut", "cre"),
-           email = "bradleyw@uow.edu.au",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+           email = "bradleyw@uow.edu.au"
+           ))
+Description: Statistical disclosure control methods for micro-level continuous data are both varied and complex. This method can be applied to any pair of original and protected data-sets despite a difference in dimensionality and without assuming any particular joint probability structure between the original and protected data.
 License: AGPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -27,10 +26,15 @@ URL: https://github.com/mohammedfaizan0014/dress
 BugReports: https://github.com/mohammedfaizan0014/dress/issues
 RoxygenNote: 7.2.1
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
-    R (>= 2.10)
+    R (>= 2.10),
+    sdcMicro
 Imports: 
+    assertthat,
     svMisc,
     utils
+VignetteBuilder: knitr

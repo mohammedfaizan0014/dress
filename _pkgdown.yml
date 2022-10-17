@@ -1,0 +1,40 @@
+url: https://pkgdown.r-lib.org
+
+home:
+  title: dress
+
+authors:
+  Mohammed Faizan:
+    href: https://github.com/mohammedfaizan0014
+  Pauline O'Shaughnessy:
+    href: https://scholars.uow.edu.au/display/pauline_oshaughnessy
+  Bradley Wakefield:
+    href: https://earo.me
+  RStudio:
+    href: https://www.rstudio.com
+    html: <img src='https://www.tidyverse.org/rstudio-logo.svg' alt='RStudio' width='72' />
+
+template:
+  params:
+    bootswatch: cosmo
+  includes:
+    in_header: |
+      <script defer data-domain="fable.tidyverts.org" src="https://track.mitchelloharawild.com/js/plausible.js"></script>
+
+development:
+  mode: auto
+
+navbar:
+  type: default
+  left:
+  - text: Reference
+    href: reference/index.html
+  - text: Vignettes
+    menu:
+    - text: Introduction to Disclosure Risk
+      href: articles/dress.html
+
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/mohammedfaizan0014/dress
+
