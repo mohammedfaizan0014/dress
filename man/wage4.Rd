@@ -5,7 +5,7 @@
 \alias{wage4}
 \title{wage4}
 \format{
-A data frame with 3000 observations and 3 variables:
+A data frame with 3000 observations and 4 variables:
 \describe{
   \item{age}{Age of worker}
   \item{education}{A factor with levels 1. < HS Grad 2. HS Grad 3. Some College 4. College Grad and 5. Advanced Degree indicating education level}
