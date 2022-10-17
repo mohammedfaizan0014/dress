@@ -34,7 +34,8 @@ Depends:
     R (>= 2.10),
     sdcMicro,
     ggplot2,
-    dplyr
+    dplyr,
+    patchwork
 Imports: 
     assertthat,
     svMisc,
