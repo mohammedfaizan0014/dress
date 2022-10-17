@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://pkgdown.r-lib.org/404.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/articles/dress.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/index.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/reference/drscore.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/reference/update.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/reference/wage4.html</loc>
+  </url>
+  <url>
+    <loc>https://pkgdown.r-lib.org/reference/wage4_protected.html</loc>
+  </url>
+</urlset>
