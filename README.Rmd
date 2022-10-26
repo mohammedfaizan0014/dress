@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html) -->
 <!-- badges: end -->
 
-The R package `dress` provides some measures for disclosure risk associated with the release of protected data, irrespective of what mechanism was used to protect it. Key principles of the disclosure framework include distinctness, accuracy and un-deniability. This method can be applied to any pair of original and protected data-sets despite a difference in dimensionality and without assuming any particular joint probability structure between the original and protected data. 
+The R package [`dress`](https://mohammedfaizan0014.github.io/dress/index.html) provides some measures for disclosure risk associated with the release of protected data, irrespective of what mechanism was used to protect it. Key principles of the disclosure framework include distinctness, accuracy and un-deniability. This method can be applied to any pair of original and protected data-sets despite a difference in dimensionality and without assuming any particular joint probability structure between the original and protected data. 
 
 ## Installation
 
@@ -95,4 +95,4 @@ DRisk_Fxd <- update(DRisk_NN,neigh_type = 'constant',
 
 ## Getting help
 
-- Common questions about dress package are often found on [](https://stackoverflow.com/). 
+- Common questions about dress package are often found on [stack-overflow](https://stackoverflow.com/). 

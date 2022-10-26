@@ -8,13 +8,15 @@
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html) -->
 <!-- badges: end -->
 
-The R package `dress` provides some measures for disclosure risk
-associated with the release of protected data, irrespective of what
-mechanism was used to protect it. Key principles of the disclosure
-framework include distinctness, accuracy and un-deniability. This method
-can be applied to any pair of original and protected data-sets despite a
-difference in dimensionality and without assuming any particular joint
-probability structure between the original and protected data.
+The R package
+[`dress`](https://mohammedfaizan0014.github.io/dress/index.html)
+provides some measures for disclosure risk associated with the release
+of protected data, irrespective of what mechanism was used to protect
+it. Key principles of the disclosure framework include distinctness,
+accuracy and un-deniability. This method can be applied to any pair of
+original and protected data-sets despite a difference in dimensionality
+and without assuming any particular joint probability structure between
+the original and protected data.
 
 ## Installation
 
@@ -93,16 +95,16 @@ DRisk_NN <- drscore(
 #> Number of Outlier Interval Matches in Sample                0
 #> Number of Distint Outlier Interval Matches in Sample        0 
 #>  
-#> Delta Disclosure Risk of Sample                             0.1102
-#> Delta Disclosure Risk of Sample Outliers                    0.7895
+#> Delta Disclosure Risk of Sample                             0.1037
+#> Delta Disclosure Risk of Sample Outliers                    0.7632
 #> Proportion Distinct                                         1
-#> Proportion Estimated                                        0.8981
-#> Proportion Undeniable                                       0.1102 
+#> Proportion Estimated                                        0.9583
+#> Proportion Undeniable                                       0.1037 
 #>  
 #> Category Level Disclosure Risk: 
 #>  
 #>     N.Obs     DRisk  Out_DRisk Distinct Estimated Undeniable
-#> All  1080 0.1101852 0.02777778        1 0.8981481  0.1101852
+#> All  1080 0.1037037 0.02685185        1 0.9583333  0.1037037
 
 #Update neighbourhood to fixed threshold definition
 DRisk_Fxd <- update(DRisk_NN,neigh_type = 'constant',
@@ -122,20 +124,20 @@ DRisk_Fxd <- update(DRisk_NN,neigh_type = 'constant',
 #> Number of Distinct Points in Sample                         642
 #> Number of Distinct Outliers in Sample                       38
 #> Number of Exact Matches in Sample                           0
-#> Number of Interval Matches in Sample                        6
+#> Number of Interval Matches in Sample                        7
 #> Number of Outlier Interval Matches in Sample                0
 #> Number of Distint Outlier Interval Matches in Sample        0 
 #>  
-#> Delta Disclosure Risk of Sample                             0.1463
-#> Delta Disclosure Risk of Sample Outliers                    0.6842
+#> Delta Disclosure Risk of Sample                             0.1444
+#> Delta Disclosure Risk of Sample Outliers                    0.2895
 #> Proportion Distinct                                         0.5944
 #> Proportion Estimated                                        0.9546
-#> Proportion Undeniable                                       0.15 
+#> Proportion Undeniable                                       0.1546 
 #>  
 #> Category Level Disclosure Risk: 
 #>  
 #>     N.Obs     DRisk  Out_DRisk  Distinct Estimated Undeniable
-#> All  1080 0.1462963 0.02407407 0.5944444 0.9546296       0.15
+#> All  1080 0.1444444 0.01018519 0.5944444 0.9546296  0.1546296
 ```
 
 ## Learning the Mathematics
@@ -146,4 +148,4 @@ DRisk_Fxd <- update(DRisk_NN,neigh_type = 'constant',
 ## Getting help
 
 -   Common questions about dress package are often found on
-    [](https://stackoverflow.com/).
+    [stack-overflow](https://stackoverflow.com/).
