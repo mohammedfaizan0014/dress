@@ -52,6 +52,9 @@
 <li>
       <a href="../articles/dress.html">Introduction to Disclosure Risk</a>
     </li>
+    <li>
+      <a href="https://mohammed-mohammed-faizan.shinyapps.io/dress/" class="external-link">Dashboard</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -87,7 +90,8 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mohammedfaizan0014/dress" class="external-link">dress</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com" class="external-link">patchwork</a></span><span class="op">)</span></span></code></pre></div>
 <p>The <code>dress</code> package provides some measures for disclosure
 risk associated with the release of protected data, irrespective of what
@@ -256,16 +260,16 @@ accurately estimated and undeniable.</p>
 <span><span class="co">#&gt; Number of Outlier Interval Matches in Sample                0</span></span>
 <span><span class="co">#&gt; Number of Distint Outlier Interval Matches in Sample        0 </span></span>
 <span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt; Delta Disclosure Risk of Sample                             0.1056</span></span>
-<span><span class="co">#&gt; Delta Disclosure Risk of Sample Outliers                    0.7105</span></span>
+<span><span class="co">#&gt; Delta Disclosure Risk of Sample                             0.0889</span></span>
+<span><span class="co">#&gt; Delta Disclosure Risk of Sample Outliers                    0.7368</span></span>
 <span><span class="co">#&gt; Proportion Distinct                                         1</span></span>
-<span><span class="co">#&gt; Proportion Estimated                                        0.95</span></span>
-<span><span class="co">#&gt; Proportion Undeniable                                       0.1056 </span></span>
+<span><span class="co">#&gt; Proportion Estimated                                        0.9352</span></span>
+<span><span class="co">#&gt; Proportion Undeniable                                       0.0889 </span></span>
 <span><span class="co">#&gt;  </span></span>
 <span><span class="co">#&gt; Category Level Disclosure Risk: </span></span>
 <span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;     N.Obs     DRisk Out_DRisk Distinct Estimated Undeniable</span></span>
-<span><span class="co">#&gt; All  1080 0.1055556     0.025        1      0.95  0.1055556</span></span>
+<span><span class="co">#&gt;     N.Obs      DRisk  Out_DRisk Distinct Estimated Undeniable</span></span>
+<span><span class="co">#&gt; All  1080 0.08888889 0.02592593        1 0.9351852 0.08888889</span></span>
 <span></span>
 <span><span class="co">#Update neighbourhood to fixed threshold definition</span></span>
 <span><span class="va">DRisk_Fxd</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/update.html">update</a></span><span class="op">(</span><span class="va">DRisk_NN</span>,neigh_type <span class="op">=</span> <span class="st">'constant'</span>,</span>
@@ -285,20 +289,20 @@ accurately estimated and undeniable.</p>
 <span><span class="co">#&gt; Number of Distinct Points in Sample                         642</span></span>
 <span><span class="co">#&gt; Number of Distinct Outliers in Sample                       38</span></span>
 <span><span class="co">#&gt; Number of Exact Matches in Sample                           0</span></span>
-<span><span class="co">#&gt; Number of Interval Matches in Sample                        8</span></span>
+<span><span class="co">#&gt; Number of Interval Matches in Sample                        3</span></span>
 <span><span class="co">#&gt; Number of Outlier Interval Matches in Sample                0</span></span>
 <span><span class="co">#&gt; Number of Distint Outlier Interval Matches in Sample        0 </span></span>
 <span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt; Delta Disclosure Risk of Sample                             0.1537</span></span>
-<span><span class="co">#&gt; Delta Disclosure Risk of Sample Outliers                    0.2895</span></span>
+<span><span class="co">#&gt; Delta Disclosure Risk of Sample                             0.1704</span></span>
+<span><span class="co">#&gt; Delta Disclosure Risk of Sample Outliers                    0.5263</span></span>
 <span><span class="co">#&gt; Proportion Distinct                                         0.5944</span></span>
-<span><span class="co">#&gt; Proportion Estimated                                        0.9444</span></span>
-<span><span class="co">#&gt; Proportion Undeniable                                       0.1574 </span></span>
+<span><span class="co">#&gt; Proportion Estimated                                        0.9556</span></span>
+<span><span class="co">#&gt; Proportion Undeniable                                       0.1806 </span></span>
 <span><span class="co">#&gt;  </span></span>
 <span><span class="co">#&gt; Category Level Disclosure Risk: </span></span>
 <span><span class="co">#&gt;  </span></span>
 <span><span class="co">#&gt;     N.Obs     DRisk  Out_DRisk  Distinct Estimated Undeniable</span></span>
-<span><span class="co">#&gt; All  1080 0.1537037 0.01018519 0.5944444 0.9444444  0.1574074</span></span></code></pre></div>
+<span><span class="co">#&gt; All  1080 0.1703704 0.01851852 0.5944444 0.9555556  0.1805556</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co">########################</span></span>
@@ -419,7 +423,7 @@ Framework for Micro-Level Data</em></a> and in the <a href=""><em>pkgdown site</
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by <a href="https://github.com/mohammedfaizan0014" class="external-link">Mohammed Faizan</a>, <a href="https://scholars.uow.edu.au/display/pauline_oshaughnessy" class="external-link">Pauline O’Shaughnessy</a>, <a href="https://earo.me" class="external-link">Bradley Wakefield</a>.</p>
+<p>Developed by <a href="https://github.com/mohammedfaizan0014" class="external-link">Mohammed Faizan</a>, <a href="https://scholars.uow.edu.au/display/pauline_oshaughnessy" class="external-link">Pauline O’Shaughnessy</a>, <a href="https://github.com/bradleyw-uow" class="external-link">Bradley Wakefield</a>.</p>
 </div>
 
 <div class="pkgdown">

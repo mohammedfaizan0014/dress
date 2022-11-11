@@ -9,7 +9,7 @@ authors:
   Pauline O'Shaughnessy:
     href: https://scholars.uow.edu.au/display/pauline_oshaughnessy
   Bradley Wakefield:
-    href: https://www.uow.edu.au/
+    href: https://github.com/bradleyw-uow
   RStudio:
     href: https://www.rstudio.com
     html: <img src='https://www.tidyverse.org/rstudio-logo.svg' alt='RStudio' width='72' />
@@ -33,6 +33,8 @@ navbar:
     menu:
     - text: Introduction to Disclosure Risk
       href: articles/dress.html
+    - text: Dashboard
+      href: https://mohammed-mohammed-faizan.shinyapps.io/dress/
 
   right:
   - icon: fa-github fa-lg
